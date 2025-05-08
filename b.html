@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekday Display</title>
+    <script>
+        function getWeekday() {
+            // Get the value entered by the user
+            var dayNumber = document.getElementById("dayNumber").value;
+
+            // Convert input to integer
+            dayNumber = parseInt(dayNumber);
+
+            // Switch case to display the correct weekday
+            var dayName = "";
+
+            switch(dayNumber) {
+                case 1:
+                    dayName = "Monday";
+                    break;
+                case 2:
+                    dayName = "Tuesday";
+                    break;
+                case 3:
+                    dayName = "Wednesday";
+                    break;
+                case 4:
+                    dayName = "Thursday";
+                    break;
+                case 5:
+                    dayName = "Friday";
+                    break;
+                case 6:
+                    dayName = "Saturday";
+                    break;
+                case 7:
+                    dayName = "Sunday";
+                    break;
+                default:
+                    dayName = "Invalid input! Please enter a number between 1 and 7.";
+            }
+
+            // Display the result
+            document.getElementById("result").innerText = "The day is: " + dayName;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Enter a Number to Display the Weekday</h2>
+    <label for="dayNumber">Enter a number (1-7): </label>
+    <input type="text" id="dayNumber" placeholder="1-7">
+    <button onclick="getWeekday()">Get Weekday</button>
+
+    <p id="result"></p>
+
+</body>
+</html>

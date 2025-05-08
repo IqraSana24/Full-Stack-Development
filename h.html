@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form Validation</title>
+    <script>
+        // Function to validate the name
+        function validateName() {
+            var name = document.getElementById("name").value;
+            var nameRegex = /^[A-Za-z][A-Za-z0-9]{5,}$/; // Starts with letter and then alphanumeric (min 6 chars)
+            if (!nameRegex.test(name)) {
+                alert("Name must start with a letter and be at least 6 characters long.");
+                return false;
+            }
+            return true;
+        }
+
+        // Function to validate the mobile number
+        function validateMobile() {
+            var mobile = document.getElementById("mobile").value;
+            var mobileRegex = /^[0-9]{10}$/; // Exactly 10 digits
+            if (!mobileRegex.test(mobile)) {
+                alert("Mobile number must be exactly 10 digits.");
+                return false;
+            }
+            return true;
+        }
+
+        // Function to validate the email address
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Basic email format
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address (e.g., example@domain.com).");
+                return false;
+            }
+            return true;
+        }
+
+        // Function to validate all fields before submission
+        function validateForm() {
+            if (validateName() && validateMobile() && validateEmail()) {
+                alert("Registration Successful!");
+                return true; // Form will be submitted
+            } else {
+                return false; // Prevent form submission if validation fails
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+        <label for="name">Name (at least 6 characters, starts with alphabet): </label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="mobile">Mobile Number (exactly 10 digits): </label><br>
+        <input type="text" id="mobile" name="mobile" required><br><br>
+
+        <label for="email">Email (valid format, e.g., example@domain.com): </label><br>
+        <input type="text" id="email" name="email" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

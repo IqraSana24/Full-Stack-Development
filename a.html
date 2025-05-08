@@ -1,59 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Restaurant Webpage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larger Number Finder</title>
+    <script>
+        function findLargerNumber() {
+            // Get the input values
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var num3 = parseInt(document.getElementById("num3").value);
+
+            // Check if the inputs are valid numbers
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                alert("Please enter valid integers.");
+                return;
+            }
+
+            // Compare the numbers
+            if (num1 === num2 && num2 === num3) {
+                // If all numbers are equal
+                document.getElementById("result").innerHTML = "EQUAL NUMBERS";
+            } else {
+                // Find the largest number
+                var largest = Math.max(num1, num2, num3);
+                document.getElementById("result").innerHTML = largest + " LARGER NUMBER";
+            }
+        }
+    </script>
 </head>
 <body>
-	<header>
-		<h1>Welcome to Taj</h1>
-	</header>
-	<section>
-		<h2>How to make reservation</h2>
-		<ol>
-			<li>Visit reservation page</li>
-			<li>Select reserved date and time</li>
-			<li>Provide contact details</li>
-			<li>Confirm reservation</li>
-		</ol>
-	</section>
-	<section>
-		<h2>Our Menu</h2>
-		<ul>
-			<li>Appetizers</li>
-			<li>Main Course</li>
-			<ul>
-				<li>Vegetarian</li>
-				<li>Non-Vegetarian</li>
-				<li>Vegan</li>
-			</ul>
-			<li>Dessert</li>
-		</ul>
-	</section>
-	<section>
-		<h2>Special Meals</h2>
-		<ol>
-			<li>Daily spl menu</li>
-			<ul>
-				<li>Fresh ingredients</li>
-				<li>Cook with care</li>
-				<li>Serve with beverage</li>
-			</ul>
-		</ol>
-	</section>
-	<section>
-		<h2>Connect with us</h2>
-		<ul>
-			<li><a href="https://www.instagram.com">Instagram</a></li>
-			<li><a href="https://www.facebook.com">Facebook</a></li>
-		</ul>
-	</section>
-	<section>
-		<h2>Dish of Day</h2>
-		<li><a href="dishdetails.html">
-			<img src="imageres.jpg" alt="Special Dish" width="500">
-		</a></li>
-	</section>
+
+    <h2>Find the Larger Number</h2>
+
+    <label for="num1">Enter first number: </label>
+    <input type="number" id="num1"><br><br>
+
+    <label for="num2">Enter second number: </label>
+    <input type="number" id="num2"><br><br>
+
+    <label for="num3">Enter third number: </label>
+    <input type="number" id="num3"><br><br>
+
+    <button onclick="findLargerNumber()">Find Larger Number</button>
+
+    <h3>Result:</h3>
+    <p id="result"></p>
+
 </body>
 </html>
-	
-	

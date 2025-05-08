@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number Check</title>
+    <script>
+        // Function to check if a number is Armstrong
+        function checkArmstrong() {
+            // Get the number entered by the user
+            var num = document.getElementById("number").value;
+            var originalNum = num;
+            var sum = 0;
+            var numberOfDigits = num.length;
+
+            // Loop through each digit of the number
+            for (var i = 0; i < numberOfDigits; i++) {
+                var digit = parseInt(num.charAt(i)); // Get the current digit
+                sum += Math.pow(digit, numberOfDigits); // Add the power of digit to sum
+            }
+
+            // Check if the sum is equal to the original number
+            if (sum == originalNum) {
+                document.getElementById("result").innerHTML = originalNum + " is an Armstrong number.";
+            } else {
+                document.getElementById("result").innerHTML = originalNum + " is NOT an Armstrong number.";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Armstrong Number Checker</h2>
+    
+    <label for="number">Enter a number: </label>
+    <input type="text" id="number" placeholder="Enter a number">
+    <button onclick="checkArmstrong()">Check Armstrong</button>
+
+    <p id="result"></p>
+
+</body>
+</html>

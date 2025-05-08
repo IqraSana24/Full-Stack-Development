@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denomination Calculator</title>
+    <script>
+        function calculateDenominations() {
+            var amount = document.getElementById("amount").value;
+            var result = '';
+
+            // Denominations array
+            var denominations = [100, 50, 20, 10, 5, 2, 1];
+
+            // Loop through each denomination
+            for (var i = 0; i < denominations.length; i++) {
+                var denomination = denominations[i];
+                var count = Math.floor(amount / denomination);
+                amount = amount % denomination; // Remaining amount after deducting the denomination
+
+                if (count > 0) {
+                    result += count + ' - ' + denomination + "'s<br>";
+                }
+            }
+
+            // Display the result
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Denomination of the Amount</h2>
+
+    <label for="amount">Enter Amount: ₹</label>
+    <input type="number" id="amount" placeholder="Enter amount" min="1" required>
+    <button onclick="calculateDenominations()">Calculate Denominations</button>
+
+    <h3>Denominations:</h3>
+    <p id="result"></p>
+
+</body>
+</html>

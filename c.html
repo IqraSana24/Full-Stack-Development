@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Numbers from 1 to 10</title>
+    <script>
+        // Function to print numbers using 'for' loop
+        function printForLoop() {
+            let result = "Using For Loop: <br>";
+            for (let i = 1; i <= 10; i++) {
+                result += i + "<br>";
+            }
+            document.getElementById("forLoopResult").innerHTML = result;
+        }
+
+        // Function to print numbers using 'while' loop
+        function printWhileLoop() {
+            let result = "Using While Loop: <br>";
+            let i = 1;
+            while (i <= 10) {
+                result += i + "<br>";
+                i++;
+            }
+            document.getElementById("whileLoopResult").innerHTML = result;
+        }
+
+        // Function to print numbers using 'do-while' loop
+        function printDoWhileLoop() {
+            let result = "Using Do-While Loop: <br>";
+            let i = 1;
+            do {
+                result += i + "<br>";
+                i++;
+            } while (i <= 10);
+            document.getElementById("doWhileLoopResult").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Print Numbers from 1 to 10 Using Different Loops</h2>
+
+    <button onclick="printForLoop()">For Loop</button>
+    <p id="forLoopResult"></p>
+
+    <button onclick="printWhileLoop()">While Loop</button>
+    <p id="whileLoopResult"></p>
+
+    <button onclick="printDoWhileLoop()">Do-While Loop</button>
+    <p id="doWhileLoopResult"></p>
+
+</body>
+</html>

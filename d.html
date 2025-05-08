@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Object Data Using Loops</title>
+    <script>
+        // Define an object with some data
+        const person = {
+            name: "John",
+            age: 30,
+            city: "New York",
+            occupation: "Engineer"
+        };
+
+        // Function to print data using 'for-in' loop
+        function printForIn() {
+            let result = "Using for-in Loop: <br>";
+            for (let key in person) {
+                result += key + ": " + person[key] + "<br>";
+            }
+            document.getElementById("forInResult").innerHTML = result;
+        }
+
+        // Function to print data using 'forEach' loop
+        function printForEach() {
+            let result = "Using forEach Loop: <br>";
+            // Convert object values to an array using Object.values()
+            Object.values(person).forEach(function(value) {
+                result += value + "<br>";
+            });
+            document.getElementById("forEachResult").innerHTML = result;
+        }
+
+        // Function to print data using 'for-of' loop
+        function printForOf() {
+            let result = "Using for-of Loop: <br>";
+            // Convert object values to an array using Object.values()
+            for (let value of Object.values(person)) {
+                result += value + "<br>";
+            }
+            document.getElementById("forOfResult").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Print Object Data Using Different Loops</h2>
+
+    <button onclick="printForIn()">For-in Loop</button>
+    <p id="forInResult"></p>
+
+    <button onclick="printForEach()">ForEach Loop</button>
+    <p id="forEachResult"></p>
+
+    <button onclick="printForOf()">For-of Loop</button>
+    <p id="forOfResult"></p>
+
+</body>
+</html>
